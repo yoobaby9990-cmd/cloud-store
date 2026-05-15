@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="">
+</body>
+</html>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050510;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,#00bfff33,transparent 25%),
+radial-gradient(circle at bottom right,#ffd70022,transparent 25%),
+radial-gradient(circle at center,#ffffff08,transparent 40%);
+z-index:-1;
+animation:bgMove 10s infinite alternate;
+}
+
+@keyframes bgMove{
+0%{
+transform:scale(1);
+}
+100%{
+transform:scale(1.1);
+}
+}
+
+/* Navbar */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#00000070;
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid #ffffff15;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:white;
+}
+
+.logo span{
+color:gold;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:0.3s;
+font-size:14px;
+}
+
+nav ul li a:hover{
+color:gold;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:50px 20px;
+}
+
+.hero-content h1{
+font-size:80px;
+text-transform:uppercase;
+background:linear-gradient(to right,white,gold);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+0%{
+filter:drop-shadow(0 0 10px gold);
+}
+100%{
+filter:drop-shadow(0 0 25px #00bfff);
+}
+}
+
+.hero-content p{
+margin-top:20px;
+font-size:18px;
+color:#cccccc;
+max-width:700px;
+}
+
+.hero-buttons{
+margin-top:40px;
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border:none;
+border-radius:15px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+text-decoration:none;
+font-weight:700;
+}
+
+.btn-gold{
+background:gold;
+color:black;
+box-shadow:0 0 20px gold;
+}
+
+.btn-dark{
+background:#111;
+color:white;
+border:1px solid #ffffff25;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+/* Sections */
+
+.section{
+padding:100px 8%;
+}
+
+.section-title{
+font-size:45px;
+margin-bottom:60px;
+text-align:center;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#0d0d18;
+padding:30px;
+border-radius:25px;
+border:1px solid #ffffff15;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #00bfff55;
+}
+
+.card h2{
+margin-bottom:20px;
+font-size:24px;
+}
+
+.price{
+font-size:30px;
+color:gold;
+margin-bottom:15px;
+}
+
+.card p{
+color:#ccc;
+line-height:1.7;
+}
+
+/* Features */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.feature-box{
+background:#0d0d18;
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:1px solid #ffffff15;
+transition:0.3s;
+}
+
+.feature-box:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #ffd70040;
+}
+
+/* Payment */
+
+.payment{
+text-align:center;
+background:#0d0d18;
+padding:50px;
+border-radius:30px;
+border:1px solid #ffffff15;
+}
+
+.payment-btn{
+display:inline-block;
+margin-top:30px;
+padding:18px 40px;
+background:gold;
+color:black;
+font-weight:800;
+font-size:18px;
+border-radius:18px;
+text-decoration:none;
+box-shadow:0 0 25px gold;
+transition:0.3s;
+}
+
+.payment-btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 40px gold;
+}
+
+/* Contact */
+
+.contact{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+}
+
+.contact-box{
+background:#0d0d18;
+padding:25px;
+border-radius:20px;
+min-width:250px;
+text-align:center;
+border:1px solid #ffffff15;
+transition:0.3s;
+}
+
+.contact-box:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #00bfff33;
+}
+
+/* Footer */
+
+footer{
+padding:30px;
+text-align:center;
+background:black;
+margin-top:60px;
+border-top:1px solid #ffffff10;
+}
+
+/* Floating Button */
+
+.float{
+position:fixed;
+right:20px;
+bottom:20px;
+background:gold;
+color:black;
+padding:15px 18px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 20px gold;
+animation:floatAnim 2s infinite ease-in-out;
+}
+
+@keyframes floatAnim{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:50px;
+}
+
+.section-title{
+font-size:35px;
+}
+
+nav{
+padding:15px 5%;
+}
+
+nav ul{
+gap:15px;
+font-size:12px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+<div class="logo">
+Cloud <span>Store</span>
+</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#prices">Prices</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#payment">Payment</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Cloud Store</h1>
+
+<p>
+Premium Gaming Panels • Luxury Experience • Anti Ban • Safe Services • Fast Delivery
+</p>
+
+<div class="hero-buttons">
+
+<a href="#prices" class="btn btn-gold">
+View Prices
+</a>
+
+<a href="#contact" class="btn btn-dark">
+Contact Now
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Prices -->
+
+<section class="section" id="prices">
+
+<h1 class="section-title">
+Our Panels
+</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>iPhone Panel</h2>
+<div class="price">₹1111</div>
+<p>
+45 Days Access<br>
+Premium Security<br>
+Fast Activation
+</p>
+</div>
+
+<div class="card">
+<h2>Certificate</h2>
+<div class="price">₹333</div>
+<p>
+1.5 Year Duration<br>
+Luxury Support<br>
+Instant Delivery
+</p>
+</div>
+
+<div class="card">
+<h2>Android Panel</h2>
+<div class="price">₹799</div>
+<p>
+55 Days Access<br>
+CS Rank Push<br>
+Second ID Support
+</p>
+</div>
+
+<div class="card">
+<h2>Maid ID Panel</h2>
+<div class="price">₹1333</div>
+<p>
+Anti Ban<br>
+Anti Blacklist<br>
+2 Months Access
+</p>
+</div>
+
+<div class="card">
+<h2>PC Panel</h2>
+<div class="price">₹699</div>
+<p>
+CS / BR Support<br>
+Second ID<br>
+Gaming Optimized
+</p>
+</div>
+
+</div>
+<div class="card">
+<h2>Live UID Bypass For PC</h2>
+<div class="price">₹499</div>
+<p>
+90 Days Access<br>
+Live UID Bypass<br>
+High Performance Support
+</p>
+<div class="card">
+<h2>Brutal Main ID Safe</h2>
+<div class="price">₹1999</div>
+<p>
+Aimbot Rage<br>
+Aim Vix<br>
+Aimkill<br>
+Silent Aimbot<br>
+Silent Cover<br>
+Ultra Smooth Gameplay<br>
+Main ID Safe Protection<br>
+And More...
+for 55 day !
+</p>
+</div>
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section class="section" id="features">
+
+<h1 class="section-title">
+Features
+</h1>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>⚡ Fast Delivery</h3>
+</div>
+
+<div class="feature-box">
+<h3>🛡 Anti Ban</h3>
+</div>
+
+<div class="feature-box">
+<h3>🔥 Luxury UI</h3>
+</div>
+
+<div class="feature-box">
+<h3>🎮 Gaming Style</h3>
+</div>
+
+<div class="feature-box">
+<h3>💎 Premium Quality</h3>
+</div>
+
+<div class="feature-box">
+<h3>📱 Mobile Friendly</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- Payment -->
+
+<!-- PAYMENT SECTION -->
+
+<section class="section" id="payment">
+
+<div class="payment">
+
+<h1 class="section-title">
+Payment QR
+</h1>
+
+<p>
+Click the button below to open QR payment image.
+</p>
+
+<!-- QR IMAGE LINK -->
+<a href="IMG_2928.jpg" target="_blank" class="payment-btn">
+OPEN QR
+</a>
+
+</div>
+
+</section>
+<!-- Contact -->
+
+<section class="section" id="contact">
+
+<h1 class="section-title">
+Contact Us
+</h1>
+
+<div class="contact">
+
+<div class="contact-box">
+<h3>Instagram</h3>
+<p>@_cloud_official_store</p>
+</div>
+
+<div class="contact-box">
+<h3>Telegram</h3>
+<p>@_cloud_official_store</p>
+</div>
+
+<div class="contact-box">
+<h3>Discord</h3>
+<p>Cloud Store Server</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+© 2026 Cloud Store • All Rights Reserved
+</footer>
+
+<a href="#" class="float">☁</a>
+
+</body>
+</html>
+```
